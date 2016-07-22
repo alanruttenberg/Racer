@@ -42,6 +42,9 @@
   (setf (logical-pathname-translations "racer")
     `(("**;*.*.*" ,translation))))
 
+;; Alanr
+(ql::use-only-quicklisp-systems)
+
 ;;; ========================================================================================
 
 ;;;

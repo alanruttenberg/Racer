@@ -160,8 +160,17 @@
   (ccl:make-read-write-lock))
 
 
+#+abcl
+(defmacro without-interrupts (&body body)
+  (warn "No working WITHOUT-INTERRUPTS in this implementation")
+  `(progn ,@body))
+
+#+abcl
+(defmacro racer-without-interrupts (&body body)
+  (warn "No working WITHOUT-INTERRUPTS in this implementation")
+  `(progn ,@body))
 #|
-#-(or :ccl :excl :sbcl (and :lispworks (not (or :lispworks6 :lispworks7))))
+#-(or :ccl :abcl :excl :sbcl (and :lispworks (not (or :lispworks6 :lispworks7))))
 (defmacro without-interrupts (&body body)
   (warn "No working WITHOUT-INTERRUPTS in this implementation")
   `(progn ,@body))
